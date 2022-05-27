@@ -1,4 +1,4 @@
-package Assignment.student.student;
+package com.example.student.student;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,18 +10,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class Student {
 
     @Id
-    @GeneratedValue( strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    String name;
+    String username;
 
     String email;
 
-    String department;
+    String password;
+
+    String role = "USER";
+
+    Boolean enabled = true;
+
 }
